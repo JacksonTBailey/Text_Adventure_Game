@@ -1385,10 +1385,8 @@ options:[
 	{getText() {return "What's behind that door in the corner of the dining room?"}, nextGameLevel: getNextGameLevel(()=>10.24121)},
 	{getText() {return "Tell me more about Yolrein"}, requiredState:(currentState)=>currentState.resistanceRumor===undefined, nextGameLevel: getNextGameLevel(()=>10.24122)},
 	{getText() {return "How do I get an audience with the King?"}, nextGameLevel: getNextGameLevel(()=>10.24123)},
-	{getText() {return "*Whispering* I'd like to help with the resistance"}, requiredState:(currentState)=>((currentState.resistanceRumor && currentState.obsidianEye) ||
-	(currentState.resistanceRumor && currentState.mageStaff)), setState:{resistancePassword:true}, nextGameLevel: getNextGameLevel(()=>10.24124)},
-	{getText() {return "*Whispering* I'd like to help with the resistance"}, requiredState:(currentState)=>((currentState.resistanceRumor && currentState.obsidianEye===undefined) ||
-	(currentState.resistanceRumor && currentState.mageStaff === undefined)), nextGameLevel: getNextGameLevel(()=>10.24125)},
+	{getText() {return "*Whispering* I'd like to help with the resistance"}, requiredState:(currentState)=>currentState.resistanceRumor && currentState.completedQuest, setState:{resistancePassword:true}, nextGameLevel: getNextGameLevel(()=>10.24124)},
+	{getText() {return "*Whispering* I'd like to help with the resistance"}, requiredState:(currentState)=>currentState.completedQuest===undefined && currentState.resistanceRumor, nextGameLevel: getNextGameLevel(()=>10.24125)},
 	{getText() {return "Leave receptionist table"}, nextGameLevel: getNextGameLevel(()=>10.2401)},
   ]
 },
@@ -1764,8 +1762,9 @@ options:[
 	{getText(){return "The town's local merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
 	{getText(){return "The Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
 	{getText(){return "The Royal Library"}, requiredState:(currentState)=>currentState.libraryPass, nextGameLevel:getNextGameLevel(()=>11.15)},
-	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest, nextGameLevel:getNextGameLevel(()=>12.15)},
-	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest, nextGameLevel:getNextGameLevel(()=>12.16)},
+	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
+	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
   ]
 },
 {
@@ -1825,7 +1824,7 @@ options:[
 	{getText() {return "Wolf Hide: +8 GP"}, requiredState:(currentState)=>currentState.wolfHide, setState:{wolfHide:false}, moneyEvent:gainMoney(8), nextGameLevel: getNextGameLevel(()=>12.1121)},
 	{getText() {return "Fox Meat: +4 GP"}, requiredState:(currentState)=>currentState.meat, setState:{meat:false}, moneyEvent:gainMoney(4), nextGameLevel: getNextGameLevel(()=>12.1121)},
 	{getText() {return "Wolf Meat: +6 GP"}, requiredState:(currentState)=>currentState.wolfMeat, setState:{wolfMeat:false}, moneyEvent:gainMoney(6), nextGameLevel: getNextGameLevel(()=>12.1121)},
-	{getText() {return "Go back"}, nextGameLevel: getNextGameLevel(()=>11.1101)},
+	{getText() {return "Go back"}, nextGameLevel: getNextGameLevel(()=>12.1121)},
   ]
 },
 {
