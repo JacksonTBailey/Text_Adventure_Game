@@ -1,0 +1,203 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body{
+  padding:0;
+  margin:0;
+  background-color: #4d5156;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-game{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top:5%;
+}
+.player-status{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%
+}
+.container{
+  height: fit-content;
+  max-width: 80%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+}
+.gold-container{
+  width:30%;
+  margin: 2% 1% 0 1%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px;
+}
+.health-container{
+  width:30%;
+  margin: 2% 1% 0 0;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px;
+}
+.arrow-container{
+  width:30%;
+  margin: 2% 0 0 1%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px;
+}
+.btn-grid{
+  display: grid;
+  grid-template-columns: repeat(1,auto);
+  gap: 10px;
+  margin-top: 20px;
+  font-size: smaller;
+}
+.btn{
+  background-color: #2e6171;
+  border: 1px solid #556f7a;
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline:none;
+  color: white;
+  text-align: center;
+}
+.btn:hover{
+  background-color: #321325;
+  border: 1px solid #E0D3De;
+  cursor: pointer;
+}
+
+.text{
+  font-size: medium;
+}
+
+@media (min-width: 1200px){
+  .container{
+    width: 800px;
+    max-width: 80%;}
+
+  .player-status{
+    justify-content: center;
+    margin-top: 35vh;
+    font-size: x-large;}
+
+  .gold-container{
+    width:10%;
+    max-width: 20%;
+    margin: 0 2% 0 2%;}
+
+  .health-container{
+    width:10%;
+    max-width: 20%;
+    margin: 0 0 0 2%;}
+
+  .arrow-container{
+    width:10%;
+    max-width: 20%;
+    margin: 0 2% 0 0;}
+
+  .btn-grid{
+    grid-template-columns: repeat(2,auto);}
+
+  .text{
+    font-size: x-large;}
+
+  .main-game{
+    width: 100%;
+    margin-top:2%;}
+}
+@media (min-width: 1000px) and (max-width: 1199px){
+  .container{
+    width: 800px;
+    max-width: 80%;
+    font-size: xx-large;}
+
+  .player-status{
+    justify-content: center;
+    margin-top: 2%;
+    font-size: xx-large;}
+
+  .gold-container{
+    width:30%;
+    max-width: 30%;
+    margin: 0 2% 0 1%;}
+
+  .health-container{
+    width:30%;
+    max-width: 30%;
+    margin: 0 1% 0 0;}
+
+  .arrow-container{
+    width:30%;
+    max-width: 35%;
+    margin: 0 1% 0 0;}
+
+  .btn{
+    font-size: smaller}
+
+  .btn-grid{
+    margin-top: 7%;
+    grid-template-columns: repeat(1,auto);}
+
+
+  .main-game{
+    width: 100%;
+    margin-top:5%;}
+
+  .text{
+    font-size: xx-large;}
+}
+
+@media (min-width: 750px) and (max-width: 999px){
+  .container{
+    width: 800px;
+    max-width: 80%;
+    font-size: xx-large;}
+
+  .player-status{
+    justify-content: center;
+    margin-top: 2%;
+    font-size: x-large;}
+
+  .gold-container{
+    width:30%;
+    max-width: 30%;
+    margin: 0 2% 0 1%;}
+
+  .health-container{
+    width:30%;
+    max-width: 30%;
+    margin: 0 1% 0 0;}
+
+  .arrow-container{
+    width:30%;
+    max-width: 35%;
+    margin: 0 1% 0 0;}
+
+  .btn{
+    font-size: large}
+
+  .btn-grid{
+    margin-top: 7%;
+    grid-template-columns: repeat(1,auto);}
+
+
+  .main-game{
+    width: 100%;
+    margin-top:5%;}
+
+  .text{
+    font-size: x-large;}
+}
