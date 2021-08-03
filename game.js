@@ -306,8 +306,8 @@ const gameLevels = [
 	getText() {return "You awaken from your slumber to find you are locked in a dungeon. The last thing you remember was bending down to pick up the spoils from a goblin you had just killed.\
 	You look around the room and find yourself being guarded by 2 goblins. Lucky for you, both seem to be fast asleep."},
 	options: [
-  	{getText() {return "Try to sneak past the goblins and into the corridor"}, nextGameLevel: getNextGameLevel(()=>2.1)},
-  	{getText() {return "Steal one of the goblins' dagger"}, setState:{goblinDagger:true}, nextGameLevel: getNextGameLevel(()=>2.2)},
+    {getText() {return "Steal one of the goblins' dagger"}, setState:{goblinDagger:true}, nextGameLevel: getNextGameLevel(()=>2.2)},
+	  {getText() {return "Try to sneak past the goblins and into the corridor"}, nextGameLevel: getNextGameLevel(()=>2.1)},
 	]
   },
   {
@@ -340,17 +340,17 @@ const gameLevels = [
 	id:3.12,
 	getText(){return "You continue down the hallway until you reach a dimly lit room. As you enter the dark room, you're attacked by 3 goblins!"},
 	options:[
-  	{getText(){return "Punch them"}, nextGameLevel: getNextGameLevel(()=>4.14)},
-  	{getText(){return "Slash them with your sword"}, requiredState:(currentState) => currentState.goblinSword, healthEvent(){return loseHealth(5)}, nextGameLevel: getNextGameLevel(()=>4.12)},
-  	{getText(){return "Stab them"}, requiredState:(currentState) => currentState.goblinDagger, nextGameLevel: getNextGameLevel(()=>4.13)},
+  	{getText(){return "Punch them"}, heroDamageRandomizerEvent:heroDamageRandomizer(10,21), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.141,4.14)},
+  	{getText(){return "Slash them (Sword)"}, requiredState:(currentState) => currentState.goblinSword, heroDamageRandomizerEvent:heroDamageRandomizer(1,5), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.12)},
+  	{getText(){return "Stab them (Dagger)"}, requiredState:(currentState) => currentState.goblinDagger, heroDamageRandomizerEvent:heroDamageRandomizer(5,10), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.131,4.13)},
 	]
   },
   {id:3.21,
   getText(){return "You barely manage to dodge the oncoming attack. As you do, you throw your dagger straight into the screecher's head, killing him instantly. It doesn't appear as though any other \
   goblins were alerted to your presence."},
   options:[
+  {getText(){return "Attack the remaining goblin"}, setState:{goblinDagger:true}, nextGameLevel: getNextGameLevel(()=>4.16)},
 	{getText(){return "Retrieve the dagger"},nextGameLevel: getNextGameLevel(()=>4.15)},
-	{getText(){return "Attack the remaining goblin"}, setState:{goblinDagger:true}, nextGameLevel: getNextGameLevel(()=>4.16)},
 	{getText(){return "Flee"}, nextGameLevel: getNextGameLevel(()=>4.17)}
   ]
 },
@@ -381,9 +381,46 @@ const gameLevels = [
   ]
 },
 {
+  id:4.121,
+  getText() {return "You slash at the two goblins, taking both of them down immediately! \n\n What do you want to do?"},
+  options:[
+	{getText(){return "Loot the bodies"}, moneyEvent:gainMoney(15), setState:{helmet: true, lantern: true}, nextGameLevel: getNextGameLevel(()=>5.10)},
+	{getText(){return "Search the room"}, setState:{healthPotion:true}, nextGameLevel: getNextGameLevel(()=>5.11)},
+  ]
+},
+{
   id:4.13,
   getText() {return "You stab one of the goblins in the head, killing it instantly. The other two goblins flank you from both sides and slash you with their swords. \n\n\
   You feel a sharp pain and look down to see your insides have, well... become outsides. Your vision begins to blur and your feel yourself falling. \
+  As you begin to fade from existance, you hear one of the goblins mock you, \"Perhaps you will make better choices in another life, swine!\""},
+  options:[
+	{getText() {return "Restart"}, nextGameLevel: getNextGameLevel(()=>-1,-1)},
+  ]
+},
+{
+  id:4.131,
+  getText() {return "You stab one of the goblins in the head, killing it instantly. The other two goblins flank you from both sides and slash you with their swords. You\
+  manage to dodge one of their blows, but end up taking a pretty serious blow to your stomach from one of the goblin's blades. Luckily, it didn't cut too deep or else you \
+  would have been sliced in two. \n\n What do you want to do?"},
+  options:[
+    {getText(){return "Punch them"}, heroDamageRandomizerEvent:heroDamageRandomizer(20,50), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.142)},
+  	{getText(){return "Slash them (Sword)"}, requiredState:(currentState) => currentState.goblinSword, heroDamageRandomizerEvent:heroDamageRandomizer(1,5), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.121)},
+  	{getText(){return "Stab them (Dagger)"}, requiredState:(currentState) => currentState.goblinDagger, heroDamageRandomizerEvent:heroDamageRandomizer(5,10), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.132,4.133)},
+  ]
+},
+{
+  id:4.132,
+  getText() {return "The goblins swing at you, but you dodge their attacks! You stab one of the goblins in the heart and he drops to the floor. The last goblin tries to run away \
+  in fear, but you throw your knife at him and hit him in the back. The goblin somehow didn't go down! He charges at you and cuts you pretty badly, but you grab his \
+  neck and choke him until he passes out. Then you take your knife and stab him to death. \n\n Now what?"},
+  options:[
+      {getText(){return "Loot the bodies"}, moneyEvent:gainMoney(15), setState:{helmet: true, lantern: true}, nextGameLevel: getNextGameLevel(()=>5.10)},
+    	{getText(){return "Search the room"}, setState:{healthPotion:true}, nextGameLevel: getNextGameLevel(()=>5.11)},
+  ]
+},
+{
+  id:4.133,
+  getText() {return "The goblins swing at you and you attempt to dodge their blows, but you miscalculate the direction of their swords and get sliced in two.\
   As you begin to fade from existance, you hear one of the goblins mock you, \"Perhaps you will make better choices in another life, swine!\""},
   options:[
 	{getText() {return "Restart"}, nextGameLevel: getNextGameLevel(()=>-1,-1)},
@@ -394,6 +431,23 @@ const gameLevels = [
   getText() {return "You punch one of them in the face, only enraging them more. It seems to have done literally no damage. In fact, it actually straightened out his \
   crooked nose. \n\n\
   The goblins gang up on you, slashing you to bits with their swords. You have no chance of survival. Perhaps you will make better choices in another life."},
+  options:[
+	{getText() {return "Restart"},nextGameLevel: getNextGameLevel(()=>-1,-1)},
+  ]
+},
+{
+  id:4.141,
+  getText() {return "You punch one of them in the face and somehow break his jaw! Before the other goblins have time to react, you snap his neck! The other goblins lunge at you and \
+  manage to deal some serious damage to you. You're somehow still alive..."},
+  options:[
+    {getText(){return "Punch them"}, heroDamageRandomizerEvent:heroDamageRandomizer(20,50), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.142, 4.142)},
+  	{getText(){return "Slash them (Sword)"}, requiredState:(currentState) => currentState.goblinSword, heroDamageRandomizerEvent:heroDamageRandomizer(1,5), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.121)},
+  	{getText(){return "Stab them (Dagger)"}, requiredState:(currentState) => currentState.goblinDagger, heroDamageRandomizerEvent:heroDamageRandomizer(5,10), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel: getNextGameLevel(()=>4.131,4.13)},
+  ]
+},
+{
+  id:4.142,
+  getText() {return "You punch one of them in the stomach, but he isn't fazed at all. \n\n The two goblins gang up on you, slashing you to bits with their swords. You have no chance of survival. Perhaps you will make better choices in another life."},
   options:[
 	{getText() {return "Restart"},nextGameLevel: getNextGameLevel(()=>-1,-1)},
   ]
@@ -446,7 +500,7 @@ const gameLevels = [
   id:5.12,
   getText(){return "You loot the bodies and find some GP. You try to pull the dagger out of the goblin's head, but realize it's damaged and not worth salvaging."},
   options:[
-	{getText(){return "Search the room"}, setState:{shield:true}, nextGameLevel: getNextGameLevel(()=>5.13)},
+	{getText(){return "Search the room"}, requiredState:(currentState)=>currentState.shield===undefined, setState:{shield:true}, nextGameLevel: getNextGameLevel(()=>5.13)},
 	{getText(){return "Head into the corridor to find your way out"}, nextGameLevel: getNextGameLevel(()=>6.14)},
   ]
 },
@@ -454,6 +508,7 @@ const gameLevels = [
   id: 5.13,
   getText() {return "You search the room and find a shield hidden inside of a barrel. That'll come in handy!"},
   options: [
+  {getText() {return "Loot the bodies"}, requiredState:(currentState)=>state.gp<=0, moneyEvent:gainMoney(10), nextGameLevel: getNextGameLevel(()=>5.12)},
 	{getText() {return "Head into the corridor to find your way out"}, nextGameLevel: getNextGameLevel(()=>6.14)},
   ]
 },
@@ -481,7 +536,7 @@ const gameLevels = [
   options:[
 	{getText(){return "Go through the hidden passageway"}, requiredState:(currentState)=>currentState.lantern,nextGameLevel: getNextGameLevel(()=>6.11)},
 	{getText(){return "Go through the door in the corner of the room"}, nextGameLevel: getNextGameLevel(()=>6.10)},
-	{getText(){return "loot the bodies"}, requiredState:(currentState)=>currentState.helmet===undefined, setState:{helmet:true, lantern:true},nextGameLevel: getNextGameLevel(()=>6.15)},
+	{getText(){return "loot the bodies"}, moneyEvent:gainMoney(15), requiredState:(currentState)=>currentState.helmet===undefined, setState:{helmet:true, lantern:true},nextGameLevel: getNextGameLevel(()=>6.15)},
   ]
 },
 {

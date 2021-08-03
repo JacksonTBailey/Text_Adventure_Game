@@ -23,7 +23,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: stretch;
-    width: 100%
+    width: 100%;
+    margin-top:1vh;
 }
 .container{
   height: fit-content;
@@ -32,6 +33,7 @@ body{
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px 2px;
+  margin-bottom: 5%
 }
 .gold-container{
   width:30%;
@@ -90,7 +92,7 @@ body{
 
   .player-status{
     justify-content: center;
-    margin-top: 35vh;
+    margin-top: 5vh;
     font-size: x-large;}
 
   .gold-container{
@@ -107,6 +109,9 @@ body{
     width:10%;
     max-width: 20%;
     margin: 0 2% 0 0;}
+
+  .btn{
+    font-size: larger;}
 
   .btn-grid{
     grid-template-columns: repeat(2,auto);}
@@ -127,7 +132,7 @@ body{
   .player-status{
     justify-content: center;
     margin-top: 2%;
-    font-size: xx-large;}
+    font-size: x-large;}
 
   .gold-container{
     width:30%;
@@ -145,7 +150,7 @@ body{
     margin: 0 1% 0 0;}
 
   .btn{
-    font-size: smaller}
+    font-size: large;}
 
   .btn-grid{
     margin-top: 7%;
@@ -157,7 +162,7 @@ body{
     margin-top:5%;}
 
   .text{
-    font-size: xx-large;}
+    font-size: x-large;}
 }
 
 @media (min-width: 750px) and (max-width: 999px){
