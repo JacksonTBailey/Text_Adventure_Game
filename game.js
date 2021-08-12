@@ -2023,8 +2023,6 @@ options:[
     {getText(){return "Use Super Health Potion: +40 HP"}, requiredState:(currentState)=>currentState.superHealthPotion, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return gainHealth(40 - (getDamageTaken()))},setState:{superHealthPotion:false}, nextGameLevel:getNextGameLevel(function(){if(getMageHP()>0) {return 12.1525;} else {return 12.153}})},
 
     {getText(){return "Punch"}, monsterDeathRandomizerEvent:monsterDeathRandomizer(1, 2),  killMonsterEvent(){return killWarlockApprentices(getDeadMonsters())}, randomizerEvent:heroDamageRandomizer(1, 8), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(function(){if(getSkeletonHorde()>0) {return 12.1513;} else {return 12.152}}, 12.1502)},
-
-    {getText(){return "Retreat back to town"}, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(()=>12.166, 12.1501)}
     ]
 },
 {
@@ -2048,8 +2046,6 @@ options:[
     {getText(){return "Use Super Health Potion: +40 HP"}, requiredState:(currentState)=>currentState.superHealthPotion, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return gainHealth(40 - (getDamageTaken()))},setState:{superHealthPotion:false}, nextGameLevel:getNextGameLevel(function(){if(getMageHP()>0) {return 12.1525;} else {return 12.153}})},
 
     {getText(){return "Punch"}, monsterDeathRandomizerEvent:monsterDeathRandomizer(1, 2),  killMonsterEvent(){return killWarlockApprentices(getDeadMonsters())}, randomizerEvent:heroDamageRandomizer(1, 8), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(function(){if(getSkeletonHorde()>0) {return 12.1513;} else {return 12.152}}, 12.1502)},
-
-    {getText(){return "Retreat back to town"}, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(()=>12.166, 12.1501)}
     ]
 },
 {
@@ -2073,8 +2069,6 @@ options:[
     {getText(){return "Use Super Health Potion: +40 HP"}, requiredState:(currentState)=>currentState.superHealthPotion, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return gainHealth(40 - (getDamageTaken()))},setState:{superHealthPotion:false}, nextGameLevel:getNextGameLevel(function(){if(getMageHP()>0) {return 12.1525;} else {return 12.153}})},
 
     {getText(){return "Punch"}, monsterDeathRandomizerEvent:monsterDeathRandomizer(1, 2),  killMonsterEvent(){return killWarlockApprentices(getDeadMonsters())}, randomizerEvent:heroDamageRandomizer(1, 8), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(function(){if(getSkeletonHorde()>0) {return 12.1513;} else {return 12.152}}, 12.1502)},
-
-    {getText(){return "Retreat back to town"}, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(()=>12.166, 12.1501)}
     ]
 },
 {
@@ -2098,8 +2092,6 @@ options:[
     {getText(){return "Use Super Health Potion: +40 HP"}, requiredState:(currentState)=>currentState.superHealthPotion, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return gainHealth(40 - (getDamageTaken()))},setState:{superHealthPotion:false}, nextGameLevel:getNextGameLevel(function(){if(getMageHP()>0) {return 12.1525;} else {return 12.153}})},
 
     {getText(){return "Punch"}, monsterDeathRandomizerEvent:monsterDeathRandomizer(1, 2),  killMonsterEvent(){return killWarlockApprentices(getDeadMonsters())}, randomizerEvent:heroDamageRandomizer(1, 8), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(function(){if(getSkeletonHorde()>0) {return 12.1513;} else {return 12.152}}, 12.1501)},
-
-    {getText(){return "Retreat back to town"}, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(()=>12.166, 12.1501)}
     ]
 },
 {
@@ -2123,9 +2115,6 @@ options:[
     {getText(){return "Use Super Health Potion: +40 HP"}, requiredState:(currentState)=>currentState.superHealthPotion, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return gainHealth(40 - (getDamageTaken()))},setState:{superHealthPotion:false}, nextGameLevel:getNextGameLevel(function(){if(getMageHP()>0) {return 12.1525;} else {return 12.153}})},
 
     {getText(){return "Punch"}, monsterDeathRandomizerEvent:monsterDeathRandomizer(1, 2),  killMonsterEvent(){return killWarlockApprentices(getDeadMonsters())}, randomizerEvent:heroDamageRandomizer(1, 8), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(function(){if(getSkeletonHorde()>0) {return 12.1513;} else {return 12.152}}, 12.1501)},
-
-    {getText(){return "Retreat back to town"}, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(()=>12.166, 12.1501)}
-
     ]
 },
 {
@@ -2149,8 +2138,6 @@ options:[
     {getText(){return "Use Super Health Potion: +40 HP"}, requiredState:(currentState)=>currentState.superHealthPotion, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return gainHealth(40 - (getDamageTaken()))},setState:{superHealthPotion:false}, nextGameLevel:getNextGameLevel(function(){if(getMageHP()>0) {return 12.1525;} else {return 12.153}})},
 
     {getText(){return "Punch"}, monsterDeathRandomizerEvent:monsterDeathRandomizer(1, 2), killMonsterEvent(){return killWarlockApprentices(getDeadMonsters())}, randomizerEvent:heroDamageRandomizer(1, 8), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(function(){if(getSkeletonHorde()>0) {return 12.1513;} else {return 12.152}}, 12.1501)},
-
-    {getText(){return "Retreat back to town"}, heroDamageRandomizerEvent:heroDamageRandomizer(1,7), healthEvent(){return loseHealth(getDamageTaken())}, nextGameLevel:getNextGameLevel(()=>12.166, 12.1501)}
     ]
 },
 {
@@ -2420,7 +2407,7 @@ options:[
   id: 13.1602,
   getText() {return "Cloaked Man: \"That's all I needed to hear. Go back to the King and tell him it's as good as done.\""},
   options:[
-  	{getText() {return "Greek Fire"}, setState:{foilResistancePlan3:true,},nextGameLevel: getNextGameLevel(()=>13.1602)},
+  	{getText() {return "Leave"}, setState:{foilResistancePlan3:true,},nextGameLevel: getNextGameLevel(()=>12.13)},
   ]
 },
 {
