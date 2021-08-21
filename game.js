@@ -1020,8 +1020,10 @@ options:[
 	{getText(){return "Go to the town merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
 	{getText(){return "Go to the Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
 	{getText(){return "Go to the Royal Library"}, requiredState:(currentState)=>currentState.libraryPass, nextGameLevel:getNextGameLevel(()=>11.15)},
-	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
-	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
+	{getText(){return "Leave the city to kill the Stone Golem"},  requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
   ]
 },
 {
@@ -1042,8 +1044,10 @@ options:[
 	{getText(){return "Go to the Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
 	{getText(){return "Go to the town merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
 	{getText(){return "Go to the Royal Library"}, requiredState:(currentState)=>currentState.libraryPass, nextGameLevel:getNextGameLevel(()=>11.15)},
-	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
-	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
+	{getText(){return "Leave the city to kill the Stone Golem"},  requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
   ]
 },
 {
@@ -1055,8 +1059,10 @@ options:[
 	{getText(){return "Go to the Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
 	{getText(){return "Go to the town merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
 	{getText(){return "Go to the Royal Library"}, requiredState:(currentState)=>currentState.libraryPass, nextGameLevel:getNextGameLevel(()=>11.15)},
-	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
-	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
+	{getText(){return "Leave the city to kill the Stone Golem"},  requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
   ]
 },
 {
@@ -1080,8 +1086,10 @@ options:[
 	{getText(){return "The town's local merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
 	{getText(){return "The Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
 	{getText(){return "The Royal Library"}, requiredState:(currentState)=>currentState.libraryPass, nextGameLevel:getNextGameLevel(()=>11.15)},
-	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest, nextGameLevel:getNextGameLevel(()=>12.15)},
-	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest, nextGameLevel:getNextGameLevel(()=>12.16)},,
+	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
+	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},,
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
   ]
 },
 {
@@ -1234,7 +1242,7 @@ options:[
 	{getText() {return "arrows(5): -3 GP"}, requiredState:(currentState)=>state.gp>=3 && state.arrows<15,
 	moneyEvent:loseMoney(3), arrowEvent:gainArrow(5), nextGameLevel: getNextGameLevel(()=>10.235)},
   {getText() {return "Pickaxe: +15 GP"}, requiredState:(currentState)=>currentState.pickaxeRumor && state.gp>=15 && currentState.pickaxe===undefined, setState:{pickaxe:true}, moneyEvent:loseMoney(15), nextGameLevel: getNextGameLevel(()=>10.235)},
-	{getText() {return "Go back"}, nextGameLevel: getNextGameLevel(()=>10.235)},
+	{getText() {return "Go back"}, nextGameLevel: getNextGameLevel(()=>10.233)},
   ]
 },
 {
@@ -1245,8 +1253,10 @@ options:[
 	{getText() {return "Bernice's Comfortable Inn"}, nextGameLevel: getNextGameLevel(()=>8.211)},
 	{getText() {return "Adventurer's Guild"}, nextGameLevel: getNextGameLevel(()=>10.24)},
 	{getText(){return "Go to the Royal Library"}, requiredState:(currentState)=>currentState.libraryPass, nextGameLevel:getNextGameLevel(()=>11.15)},
-	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest, nextGameLevel:getNextGameLevel(()=>12.15)},
-	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest, nextGameLevel:getNextGameLevel(()=>12.16)},
+	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
+	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
   ]
 },
 {
@@ -1512,8 +1522,8 @@ options:[
 	{getText(){return "The town's local merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
 	{getText(){return "The Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
 	{getText(){return "The Royal Library"}, requiredState:(currentState)=>currentState.libraryPass, nextGameLevel:getNextGameLevel(()=>11.15)},
-	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest, nextGameLevel:getNextGameLevel(()=>12.15)},
-	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest, nextGameLevel:getNextGameLevel(()=>12.16)},
+	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
+	{getText(){return "Leave the city to kill the Stone Golem"},  requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
   ]
 },
 {
@@ -1762,9 +1772,10 @@ options:[
 	{getText(){return "The town's local merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
 	{getText(){return "The Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
 	{getText(){return "The Royal Library"}, requiredState:(currentState)=>currentState.libraryPass, nextGameLevel:getNextGameLevel(()=>11.15)},
-	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
-	{getText(){return "Leave the city to kill the Stone Golem"}, requiredState:(currentState)=>currentState.golemQuest && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
+	{getText(){return "Leave the city to kill the Skeletons"}, requiredState:(currentState)=>currentState.skeletonQuest && currentState.mageStaff===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.15)},
+	{getText(){return "Leave the city to kill the Stone Golem"},  requiredState:(currentState)=>currentState.golemQuest && currentState.obsidianEye===undefined && currentState.questComplete===undefined, nextGameLevel:getNextGameLevel(()=>12.16)},
   {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+  {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
   ]
 },
 {
@@ -1824,7 +1835,7 @@ options:[
 	{getText() {return "Wolf Hide: +8 GP"}, requiredState:(currentState)=>currentState.wolfHide, setState:{wolfHide:false}, moneyEvent:gainMoney(8), nextGameLevel: getNextGameLevel(()=>12.1121)},
 	{getText() {return "Fox Meat: +4 GP"}, requiredState:(currentState)=>currentState.meat, setState:{meat:false}, moneyEvent:gainMoney(4), nextGameLevel: getNextGameLevel(()=>12.1121)},
 	{getText() {return "Wolf Meat: +6 GP"}, requiredState:(currentState)=>currentState.wolfMeat, setState:{wolfMeat:false}, moneyEvent:gainMoney(6), nextGameLevel: getNextGameLevel(()=>12.1121)},
-	{getText() {return "Go back"}, nextGameLevel: getNextGameLevel(()=>12.1121)},
+	{getText() {return "Go back"}, nextGameLevel: getNextGameLevel(()=>12.11)},
   ]
 },
 {
@@ -1842,8 +1853,8 @@ options:[
   id: 12.1121,
   getText() {return "Merchant:\"Here's the GP I owe you.\" \n\n You now have " + state.gp + " GP. What else can I help you with?\""},
   options:[
-	{getText() {return "Buy"}, nextGameLevel: getNextGameLevel(()=>12.112)},
-	{getText() {return "Sell"}, nextGameLevel: getNextGameLevel(()=>12.111)},
+	{getText() {return "Buy"}, nextGameLevel: getNextGameLevel(()=>12.111)},
+	{getText() {return "Sell"}, nextGameLevel: getNextGameLevel(()=>12.112)},
 	{getText() {return "Leave merchant alone"}, nextGameLevel: getNextGameLevel(()=>12.113)}
   ]
 },
@@ -1851,8 +1862,8 @@ options:[
   id: 12.1111,
   getText() {return "Merchant:\"Thanks for your purchase.\" \n\n You now have " + state.gp + " GP.What else can I help you with?\""},
   options:[
-	{getText() {return "Buy"}, nextGameLevel: getNextGameLevel(()=>12.112)},
-	{getText() {return "Sell"}, nextGameLevel: getNextGameLevel(()=>12.111)},
+	{getText() {return "Buy"}, nextGameLevel: getNextGameLevel(()=>12.111)},
+	{getText() {return "Sell"}, nextGameLevel: getNextGameLevel(()=>12.112)},
 	{getText() {return "Leave merchant alone"}, nextGameLevel: getNextGameLevel(()=>12.113)},
   ]
 },
@@ -2278,7 +2289,8 @@ options:[
     {getText(){return "Bernice's Comfortable Inn"}, nextGameLevel:getNextGameLevel(()=>8.211)},
   	{getText(){return "The town's local merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
   	{getText(){return "The Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
-    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined && currentState.obsidianEye || currentState.mageStaff , nextGameLevel:getNextGameLevel(()=>13.19)},
+    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
   ]
 },
 {
@@ -2288,7 +2300,8 @@ options:[
     {getText(){return "Bernice's Comfortable Inn"}, nextGameLevel:getNextGameLevel(()=>8.211)},
   	{getText(){return "The town's local merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
   	{getText(){return "The Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
-    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined && currentState.obsidianEye || currentState.mageStaff , nextGameLevel:getNextGameLevel(()=>13.19)},
+    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
   ]
 },
 {
@@ -2466,8 +2479,8 @@ options:[
     {getText(){return "Bernice's Comfortable Inn"}, nextGameLevel:getNextGameLevel(()=>8.211)},
     {getText(){return "The town's local merchant"}, nextGameLevel:getNextGameLevel(()=>10.23)},
     {getText(){return "The Adventurer's Guild"}, nextGameLevel:getNextGameLevel(()=>10.24)},
-    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>currentState.foilResistancePlan===undefined && currentState.obsidianEye || currentState.mageStaff && currentState.foilResistancePlan===undefined, nextGameLevel:getNextGameLevel(()=>13.19)},
-    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>currentState.foilResistancePlan, nextGameLevel:getNextGameLevel(()=>13.21)},
+    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan ===undefined && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.19)},
+    {getText(){return "The Royal Palace"}, requiredState:(currentState)=>(currentState.foilResistancePlan && currentState.foilKingPlan===undefined) && (currentState.obsidianEye || currentState.mageStaff) , nextGameLevel:getNextGameLevel(()=>13.21)},
 
 
   ]
